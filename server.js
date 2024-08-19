@@ -29,7 +29,7 @@ app.post('/post', async (req, res) => {
     try {
         const list = new List(req.body);
         const savedList = await list.save();
-        res.status(201).send(savedList);
+        res.status(201).send({ message: 'Added Success' });
     } catch (err) {
         console.error('Error saving the list:', err);
         res.status(500).send({ error: 'Error saving the list' });
